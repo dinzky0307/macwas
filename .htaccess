@@ -1,0 +1,15 @@
+
+# HTID:23422420: DO NOT REMOVE OR MODIFY THIS LINE AND THE LINES BELOW
+php_value display_errors 1
+# DO NOT REMOVE OR MODIFY THIS LINE AND THE LINES ABOVE HTID:23422420:
+
+RewriteEngine On
+
+# If the requested file doesn't exist
+RewriteCond %{REQUEST_FILENAME} !-f
+
+# If the requested directory doesn't exist
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# Rewrite URL to use .php files without showing the .php extension
+RewriteRule ^([a-zA-Z0-9_-]+)$ $1.php [L]
